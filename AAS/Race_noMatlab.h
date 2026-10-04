@@ -133,9 +133,8 @@ void LoadAllBenchmarkFiles() {
 	if (g_FilesLoaded) return;
 
 	string basePaths[] = {
-		// "data\\Small_Size_Instances",
-		// "data\\Big_Size_Instances",
-		"data\\Carlier_benchmark"
+		"Jose_benchmark\\Small_Size_Instances",
+		"Jose_benchmark\\Big_Size_Instances"
 	};
 
 	for (const string& dirPath : basePaths) {
@@ -207,7 +206,7 @@ void GetNextTuningInstance(int Seed)
 //
 //	if (currentPhase == RacePhase::INIT)
 //	{
-//		string smallPath = "data\\Small_Size_Instances";
+//		string smallPath = "Jose_benchmark\\Small_Size_Instances";
 //		string searchPathSmall = smallPath + "\\*.txt";
 //		WIN32_FIND_DATAA fdSmall;
 //		HANDLE hFindSmall = FindFirstFileA(searchPathSmall.c_str(), &fdSmall);
@@ -220,7 +219,7 @@ void GetNextTuningInstance(int Seed)
 //			FindClose(hFindSmall);
 //		}
 //
-//		string bigPath = "data\\Big_Size_Instances";
+//		string bigPath = "Jose_benchmark\\Big_Size_Instances";
 //		string searchPathBig = bigPath + "\\*.txt";
 //		WIN32_FIND_DATAA fdBig;
 //		HANDLE hFindBig = FindFirstFileA(searchPathBig.c_str(), &fdBig);

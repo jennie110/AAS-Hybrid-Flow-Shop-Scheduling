@@ -387,8 +387,8 @@ void processBenchmarkInstances(const string& directoryPath)
 int main()
 {
     srand((unsigned int)time(NULL));
-    string benchmarkDirectory = "data\\Small_Size_Instances";
-    // string benchmarkDirectory = "data\\Big_Size_Instances";
+    string benchmarkDirectory = "Jose_benchmark\\Small_Size_Instances";
+    // string benchmarkDirectory = "Jose_benchmark\\Big_Size_Instances";
     // 调用函数处理目录中的所有实例
     processBenchmarkInstances(benchmarkDirectory);
 

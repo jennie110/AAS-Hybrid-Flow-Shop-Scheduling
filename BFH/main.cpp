@@ -132,7 +132,7 @@ void processBenchmarkInstances(const string& directory) {
 int main() {
     srand((unsigned)time(NULL));
 
-    string benchmarkDirectory = "data\\Big_Size_Instances";
+    string benchmarkDirectory = "Jose_benchmark\\Big_Size_Instances";
     processBenchmarkInstances(benchmarkDirectory);
 
     return 0;

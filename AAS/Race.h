@@ -53,8 +53,8 @@ void LoadAllBenchmarkFiles() {
 	if (g_FilesLoaded) return;
 
 	string basePaths[] = {
-		"data\\Small_Size_Instances",
-		"data\\Big_Size_Instances"
+		"Jose_benchmark\\Small_Size_Instances",
+		"Jose_benchmark\\Big_Size_Instances"
 	};
 
 	for (const string& dirPath : basePaths) {
@@ -128,7 +128,7 @@ void GetNextTuningInstance(int Seed)
 //	// 阶段 0: 初始化 (仅在第一次调用时运行)
 //	if (currentPhase == RacePhase::INIT)
 //	{
-//		string smallPath = "data\\Small_Size_Instances";
+//		string smallPath = "Jose_benchmark\\Small_Size_Instances";
 //		string searchPathSmall = smallPath + "\\*.txt";
 //		WIN32_FIND_DATAA fdSmall;
 //		// 使用 main.cpp 中展示的文件搜索方法
@@ -142,7 +142,7 @@ void GetNextTuningInstance(int Seed)
 //			FindClose(hFindSmall);
 //		}
 //
-//		string bigPath = "data\\Big_Size_Instances";
+//		string bigPath = "Jose_benchmark\\Big_Size_Instances";
 //		string searchPathBig = bigPath + "\\*.txt";
 //		WIN32_FIND_DATAA fdBig;
 //		HANDLE hFindBig = FindFirstFileA(searchPathBig.c_str(), &fdBig);

@@ -148,7 +148,7 @@ void GenerateInstances(int InJob, int InStage, int Seed)
 void GenerateInstances(int Seed)
 {
 	//  获取目录下所有 .txt 文件列表
-	string directoryPath = "data\\Small_Size_Instances";
+	string directoryPath = "Jose_benchmark\\Small_Size_Instances";
 	vector<string> instanceFiles;
 	string searchPath = directoryPath + "\\*.txt";
 	WIN32_FIND_DATAA fd;

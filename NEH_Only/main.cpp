@@ -206,7 +206,7 @@ void processBenchmarkInstances(const string& directoryPath) {
 }
 
 int main() {
-    string benchmarkDirectory = "data\\Big_Size_Instances";
+    string benchmarkDirectory = "Jose_benchmark\\Big_Size_Instances";
     processBenchmarkInstances(benchmarkDirectory);
 
     return 0;
