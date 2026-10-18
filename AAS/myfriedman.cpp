@@ -1,3 +1,4 @@
+#ifdef AAS_MAIN_TRANSLATION_UNIT
 //
 // MATLAB Compiler: 7.0 (R2018b)
 // Date: Thu Feb  9 11:15:46 2023
@@ -87,3 +88,4 @@ extern LIB_myfriedman_CPP_API void MW_CALL_CONV myfriedman(int nargout, mwArray&
 #endif
 
 #endif
+#endif // AAS_MAIN_TRANSLATION_UNIT

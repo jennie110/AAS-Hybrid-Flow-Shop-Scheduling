@@ -10,6 +10,7 @@
 #include <direct.h>
 #include <iomanip>
 #include <cstdio>
+#define BFH_MAIN_TRANSLATION_UNIT
 #include "HFSP_BFH.cpp"
 #include "BFH_Heuristic.cpp"
 #include "IO_Utils_BFH.cpp"

@@ -1,3 +1,4 @@
+#ifdef BFH_MAIN_TRANSLATION_UNIT
 #pragma once
 #include "HFSP_BFH.cpp"
 #include <vector>
@@ -532,3 +533,4 @@ inline void improveBFH(Schedule& sched, int bStage) {
         improveStageByInsert(sched, stage, bStage);
     }
 }
+#endif // BFH_MAIN_TRANSLATION_UNIT

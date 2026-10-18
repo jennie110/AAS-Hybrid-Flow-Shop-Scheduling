@@ -1,3 +1,4 @@
+#ifdef AAS_MAIN_TRANSLATION_UNIT
 #pragma once
 #include "HFSP_CS.cpp"
 extern int gBottleneckStage;
@@ -232,3 +233,4 @@ void JobOperation::RefreshSPTB_AfterBN()
 		this->raw_AfterBN += pUnitTime[i][cJob];
 	}
 }
+#endif // AAS_MAIN_TRANSLATION_UNIT

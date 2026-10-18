@@ -5,6 +5,7 @@
 #include <chrono>
 #include <direct.h>
 
+#define NEH_MAIN_TRANSLATION_UNIT
 #include "HFSP_DABC.cpp"
 #include "HeuristicSolver.cpp"
 #include "IO_Utils.cpp"

@@ -1,3 +1,4 @@
+#ifdef AAS_MAIN_TRANSLATION_UNIT
 #pragma once
 
 // 必须先包含 Windows.h，避免与 std::byte 冲突
@@ -362,3 +363,4 @@ public:
 	int Critical_Lot;
 
 };
+#endif // AAS_MAIN_TRANSLATION_UNIT

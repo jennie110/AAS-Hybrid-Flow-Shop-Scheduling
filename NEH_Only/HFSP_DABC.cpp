@@ -1,3 +1,4 @@
+#ifdef NEH_MAIN_TRANSLATION_UNIT
 #pragma once
 
 #include <vector>
@@ -284,3 +285,4 @@ inline int evalPartialCmax(const vector<int>& perm, int flag) {
         return cmx;
     }
 }
+#endif // NEH_MAIN_TRANSLATION_UNIT

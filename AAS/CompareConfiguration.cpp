@@ -1,3 +1,4 @@
+#ifdef AAS_MAIN_TRANSLATION_UNIT
 #pragma once
 
 #include "Configuration.cpp"
@@ -21,4 +22,4 @@ public:
 		return obj1.rankIndex < obj2.rankIndex;
 	}
 };
-
+#endif // AAS_MAIN_TRANSLATION_UNIT

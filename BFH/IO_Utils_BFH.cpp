@@ -1,3 +1,4 @@
+#ifdef BFH_MAIN_TRANSLATION_UNIT
 #pragma once
 #include "HFSP_BFH.cpp"
 #include <string>
@@ -135,3 +136,4 @@ inline void writeBFHScheduleFile(const string& filePath, const Schedule& sched) 
 
     fout.close();
 }
+#endif // BFH_MAIN_TRANSLATION_UNIT

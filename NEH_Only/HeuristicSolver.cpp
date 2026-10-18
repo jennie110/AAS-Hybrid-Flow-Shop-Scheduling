@@ -1,3 +1,4 @@
+#ifdef NEH_MAIN_TRANSLATION_UNIT
 #pragma once
 #include "HFSP_DABC.cpp"
 #include <algorithm>
@@ -282,3 +283,4 @@ public:
     vector<int> bNEH_SPTB(int lambda) { return NEH_partial(seed_bSPTB(), lambda, 1); }
     vector<int> bNEH_LPTB(int lambda) { return NEH_partial(seed_bLPTB(), lambda, 1); }
 };
+#endif // NEH_MAIN_TRANSLATION_UNIT

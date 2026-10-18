@@ -1,3 +1,4 @@
+#ifdef NEH_MAIN_TRANSLATION_UNIT
 #pragma once
 #include "HFSP_DABC.cpp"
 #include <string>
@@ -231,3 +232,4 @@ inline void writeScheduleFile(const Schedule& sch, const string& algoFolder,
 
     fout.close();
 }
+#endif // NEH_MAIN_TRANSLATION_UNIT

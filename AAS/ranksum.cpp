@@ -1,3 +1,4 @@
+#ifdef AAS_MAIN_TRANSLATION_UNIT
 //
 // MATLAB Compiler: 7.0 (R2018b)
 // Date: Wed May  5 17:15:24 2021
@@ -87,3 +88,4 @@ extern LIB_ranksum_CPP_API void MW_CALL_CONV myranksum(int nargout, mwArray& p, 
 #endif
 
 #endif
+#endif // AAS_MAIN_TRANSLATION_UNIT

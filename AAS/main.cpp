@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <string.h>
+#define AAS_MAIN_TRANSLATION_UNIT
 #include "HFSP_CS.cpp"
 #include "AAS_CCH.cpp"
 #include "Race_noMatlab.cpp"
@@ -384,7 +385,9 @@ void processBenchmarkInstances(const string& directoryPath)
     /*cout << "完成处理目录中找到的 " << instanceCount << " 个实例文件。" << endl;*/
 }
 
-int main()
+// Entry for evaluating AAS with the fixed parameter configuration.
+// Rename this function to main() when benchmark evaluation is required.
+int main2()
 {
     srand((unsigned int)time(NULL));
     string benchmarkDirectory = "Jose_benchmark\\Small_Size_Instances";
@@ -395,8 +398,8 @@ int main()
     return 0;
 }
 
-//for AAD
-int main2()
+// Entry for automatic algorithm design using the iterative I/F-Race procedure.
+int main()
 {
     srand((unsigned int)time(NULL));
     int NumberOfNP_Integer = 0;

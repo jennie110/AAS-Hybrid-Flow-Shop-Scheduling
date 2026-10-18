@@ -20,7 +20,16 @@ Each text file is named `instancia_n_s_i.txt`, where `n` is the number of jobs, 
 - `BFH`: implementation of the bottleneck-focused heuristic used for comparison.
 - `NEH_Only`: implementations of the priority-rule and NEH-based heuristics used for comparison.
 
-Each code folder contains one `main.cpp` entry file and the required supporting `.cpp` files. The supporting files are included by `main.cpp`, so each program can be compiled directly from its entry file. The active dataset path is defined by `benchmarkDirectory` in each `main.cpp`. By default, AAS reads the small instances, while BFH and NEH_Only read the large instances.
+Each code folder contains one `main.cpp` entry file and the required supporting `.cpp` files. The supporting files are included by `main.cpp`, so each program can be compiled directly from its entry file. The source files also use a single-translation-unit guard, which prevents duplicate definitions if all `.cpp` files in one algorithm folder are passed to the compiler together.
+
+The AAS program provides two workflows in `AAS/main.cpp`:
+
+- `main()` runs automatic algorithm design through the iterative I/F-Race procedure. This is the default entry point.
+- `main2()` evaluates AAS with the fixed parameter configuration on the benchmark instances.
+
+C++ permits only one function named `main()`. To run the fixed-parameter benchmark workflow, rename the current I/F-Race `main()` function to a non-entry name such as `runIFRace()`, and rename `main2()` to `main()`. Reverse these two names to restore the I/F-Race entry point. The function bodies do not need to be changed.
+
+BFH and NEH_Only directly evaluate their algorithms on benchmark instances. The active dataset path is defined by `benchmarkDirectory` in each corresponding `main.cpp`.
 
 ## Requirements
 
@@ -30,28 +39,57 @@ Each code folder contains one `main.cpp` entry file and the required supporting 
 
 ## Usage instructions
 
-Open PowerShell in the repository root. With MinGW-w64 `g++`, compile the three programs as follows:
+Open PowerShell in the repository root. All commands must be run from this directory so that the relative paths to `Jose_benchmark` are resolved correctly.
+
+### AAS automatic algorithm design with I/F-Race
+
+The default `main()` in `AAS/main.cpp` starts the iterative I/F-Race procedure. It samples candidate parameter configurations, evaluates them on the Jose benchmark instances, removes statistically inferior configurations, and generates the elite configurations used by AAS.
+
+Compile and run it as follows:
 
 ```powershell
 g++ -std=c++17 -O2 AAS/main.cpp -o AAS.exe
-g++ -std=c++17 -O2 BFH/main.cpp -o BFH.exe
-g++ -std=c++17 -O2 NEH_Only/main.cpp -o NEH_Only.exe
+.\AAS.exe
 ```
 
-Create the AAS output directory and run the required program from the repository root:
+The I/F-Race implementation reads both `Jose_benchmark\\Small_Size_Instances` and `Jose_benchmark\\Big_Size_Instances`. The default settings in `AAS/Race_noMatlab.cpp` use 10 iterations and a total evaluation budget of 180,000. The procedure can therefore take considerable time. Progress is written to `EvolutionaryInformation.txt`, and the selected configurations are written to `EliteConfigurations.txt`.
+
+`Race_noMatlab.cpp` contains the native C++ statistical test used by the default build. `Race.cpp` is the earlier MATLAB-dependent implementation and is not included by default.
+
+### AAS evaluation with fixed parameters
+
+The fixed-parameter benchmark workflow is the function currently named `main2()` in `AAS/main.cpp`. Before compilation:
+
+1. Rename the default I/F-Race function from `int main()` to `int runIFRace()`.
+2. Rename the fixed-parameter function from `int main2()` to `int main()`.
+3. Set `benchmarkDirectory` to the required dataset. Use `Jose_benchmark\\Small_Size_Instances` for the small instances or `Jose_benchmark\\Big_Size_Instances` for the large instances.
+4. Compile and run from the repository root.
 
 ```powershell
 New-Item -ItemType Directory -Force results/Jose | Out-Null
+g++ -std=c++17 -O2 AAS/main.cpp -o AAS.exe
 .\AAS.exe
+```
+
+The program processes every `.txt` instance in the selected directory. It writes makespan values, running times, and detailed schedules under `results/Jose`.
+
+### BFH and NEH-based comparison algorithms
+
+Compile and run the comparison programs from the repository root:
+
+```powershell
+g++ -std=c++17 -O2 BFH/main.cpp -o BFH.exe
+g++ -std=c++17 -O2 NEH_Only/main.cpp -o NEH_Only.exe
+
 .\BFH.exe
 .\NEH_Only.exe
 ```
 
-The programs read all `.txt` instances from the directory specified by `benchmarkDirectory`. To use the other instance set, change this variable to either `Jose_benchmark\\Small_Size_Instances` or `Jose_benchmark\\Big_Size_Instances`, then recompile the program. Makespan values, running times, and detailed schedules are written to the `results` folder.
+BFH and NEH_Only currently read `Jose_benchmark\\Big_Size_Instances`. Change `benchmarkDirectory` in the corresponding `main.cpp` to `Jose_benchmark\\Small_Size_Instances` when the small instances are required, then recompile. Both programs create their output directories under `results` automatically.
 
 ## Methodology
 
-For each benchmark file, the program reads the number of jobs, stages, machines, and processing times. It then constructs a feasible hybrid flow shop schedule using the selected heuristic, calculates the makespan and computation time, and saves the summary and schedule files. AAS applies the all-active-schedule construction procedure described in the manuscript. BFH and NEH_Only provide the comparison results.
+For each benchmark file, the evaluation programs read the number of jobs, stages, machines, and processing times. They construct a feasible hybrid flow shop schedule using the selected heuristic, calculate the makespan and computation time, and save the summary and schedule files. The I/F-Race workflow automatically searches the AAS parameter space by repeatedly evaluating candidate configurations and retaining promising configurations. AAS applies the all-active-schedule construction procedure described in the manuscript. BFH and NEH_Only provide the comparison results.
 
 ## Citation
 

@@ -1,3 +1,4 @@
+#ifdef BFH_MAIN_TRANSLATION_UNIT
 #pragma once
 #include <vector>
 using namespace std;
@@ -16,3 +17,4 @@ struct Schedule {
     vector<vector<vector<int>>> chromSMJ;         // [stage][machineRow][position]
     int cmax = 0;
 };
+#endif // BFH_MAIN_TRANSLATION_UNIT

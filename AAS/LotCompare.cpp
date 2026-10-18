@@ -1,3 +1,4 @@
+#ifdef AAS_MAIN_TRANSLATION_UNIT
 #pragma once
 
 class LotCompare
@@ -20,3 +21,4 @@ public:
 		return lot1.cValue < lot2.cValue;
 	}
 };
+#endif // AAS_MAIN_TRANSLATION_UNIT

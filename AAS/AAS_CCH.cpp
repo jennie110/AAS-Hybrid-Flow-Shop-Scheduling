@@ -1,3 +1,4 @@
+#ifdef AAS_MAIN_TRANSLATION_UNIT
 #pragma once
 
 #include <vector>
@@ -3297,3 +3298,4 @@ void FAS_CCH::run_with_reversibility()
 	// 	}
 	// }
 }
+#endif // AAS_MAIN_TRANSLATION_UNIT

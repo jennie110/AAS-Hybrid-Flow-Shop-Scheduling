@@ -1,3 +1,4 @@
+#ifdef AAS_MAIN_TRANSLATION_UNIT
 #pragma once
 #include <vector>
 #include <cmath>
@@ -138,4 +139,4 @@ void Configuration::getAvgValue()
 //
 //	rankIndex += avgValue;
 //}
-
+#endif // AAS_MAIN_TRANSLATION_UNIT

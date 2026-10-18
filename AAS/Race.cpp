@@ -1,3 +1,4 @@
+#ifdef AAS_MAIN_TRANSLATION_UNIT
 #pragma once
 #include "AAS_CCH.cpp"
 #include "Configuration.cpp"
@@ -1024,4 +1025,4 @@ void Race::run()
 
 	outputBest();
 }
-
+#endif // AAS_MAIN_TRANSLATION_UNIT
