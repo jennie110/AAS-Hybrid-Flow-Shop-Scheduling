@@ -1,10 +1,10 @@
 #include <iostream>
 #include <windows.h>
 #include <string.h>
-#include "HFSP_CS.h"
-#include "AAS_CCH.h"
-#include "Race_noMatlab.h"
-//#include "Race.h"
+#include "HFSP_CS.cpp"
+#include "AAS_CCH.cpp"
+#include "Race_noMatlab.cpp"
+//#include "Race.cpp"
 #include <cstdlib>   
 #include <ctime>     
 #include <chrono>

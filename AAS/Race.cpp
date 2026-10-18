@@ -1,13 +1,13 @@
 #pragma once
-#include "AAS_CCH.h"
-#include "Configuration.h"
-#include "CompareConfiguration.h"
-#include "ranksum.h"
-#include "myfriedman.h"
+#include "AAS_CCH.cpp"
+#include "Configuration.cpp"
+#include "CompareConfiguration.cpp"
+#include "ranksum.cpp"
+#include "myfriedman.cpp"
 #include <iostream>
 #include <random>
 #include<Windows.h>
-#include "HFSP_CS.h"
+#include "HFSP_CS.cpp"
 
 
 using namespace std;

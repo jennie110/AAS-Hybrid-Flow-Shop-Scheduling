@@ -2,9 +2,9 @@
 
 #include <vector>
 #include <algorithm>
-#include "HFSP_CS.h"
-#include "LotCompare.h"
-#include "JobOperation.h"
+#include "HFSP_CS.cpp"
+#include "LotCompare.cpp"
+#include "JobOperation.cpp"
 
 
 using namespace std;

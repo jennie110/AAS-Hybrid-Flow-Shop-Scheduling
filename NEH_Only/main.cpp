@@ -5,9 +5,9 @@
 #include <chrono>
 #include <direct.h>
 
-#include "HFSP_DABC.h"
-#include "HeuristicSolver.h"
-#include "IO_Utils.h"
+#include "HFSP_DABC.cpp"
+#include "HeuristicSolver.cpp"
+#include "IO_Utils.cpp"
 
 using namespace std;
 

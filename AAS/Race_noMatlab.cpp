@@ -1,8 +1,8 @@
 #pragma once
-#include "AAS_CCH.h"
-#include "Configuration.h"
-#include "CompareConfiguration.h"
-#include "HFSP_CS.h"
+#include "AAS_CCH.cpp"
+#include "Configuration.cpp"
+#include "CompareConfiguration.cpp"
+#include "HFSP_CS.cpp"
 
 #include <iostream>
 #include <random>

@@ -1,5 +1,5 @@
 #pragma once
-#include "HFSP_CS.h"
+#include "HFSP_CS.cpp"
 extern int gBottleneckStage;
 
 //class JobOperation

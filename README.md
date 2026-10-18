@@ -20,7 +20,7 @@ Each text file is named `instancia_n_s_i.txt`, where `n` is the number of jobs, 
 - `BFH`: implementation of the bottleneck-focused heuristic used for comparison.
 - `NEH_Only`: implementations of the priority-rule and NEH-based heuristics used for comparison.
 
-Each code folder contains one `main.cpp` file and the required header files. The active dataset path is defined by `benchmarkDirectory` in each `main.cpp`. By default, AAS reads the small instances, while BFH and NEH_Only read the large instances.
+Each code folder contains one `main.cpp` entry file and the required supporting `.cpp` files. The supporting files are included by `main.cpp`, so each program can be compiled directly from its entry file. The active dataset path is defined by `benchmarkDirectory` in each `main.cpp`. By default, AAS reads the small instances, while BFH and NEH_Only read the large instances.
 
 ## Requirements
 

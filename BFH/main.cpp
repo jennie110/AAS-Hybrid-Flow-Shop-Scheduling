@@ -10,9 +10,9 @@
 #include <direct.h>
 #include <iomanip>
 #include <cstdio>
-#include "HFSP_BFH.h"
-#include "BFH_Heuristic.h"
-#include "IO_Utils_BFH.h"
+#include "HFSP_BFH.cpp"
+#include "BFH_Heuristic.cpp"
+#include "IO_Utils_BFH.cpp"
 
 using namespace std;
 
